@@ -10,8 +10,11 @@ def main():
     
     # Plotar os dados
     plt.scatter(base_dados['x'], base_dados['y'], color='red', label='Pontos experimentais')  # Pontos medidos
-    plt.plot(base_dados['x'], saida)
-
+    plt.plot(base_dados['x'], saida, color='blue', label='Regressão Linear')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Regressão Linear com ADALINE')
+    plt.legend()
     # Adicionar título e rótulos aos eixos
     plt.savefig('grafico.png')
 
