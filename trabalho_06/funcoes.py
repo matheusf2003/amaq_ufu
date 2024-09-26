@@ -33,3 +33,14 @@ def neoronio(entrada, pesos, bias):
         y_liq += pesos[i] * entrada
     
     return y_liq
+
+def correlacao_pearson(entrada, saida):
+    n = len(entrada)
+    mult = []
+    q_entrada = []
+    q_saida = []
+    for i in range(n):
+        mult.append(entrada[i]*saida[i])  # somatorio \sum_{i=0}^{n} entrada[i] * saida[i]
+        q_entrada.append(entrada[i]**2)     # somatorio \sum_{i=0}^{n} entrada[i]^2
+        q_saida.append(saida[i]**2)         # somatorio \sum_{i=0}^{n} saida[i]^2
+    return (n * sum(mult) - sum(entrada) * sum(saida)) / ((n*(sum(q_entrada)) - sum(entrada)**2)**(1/2) * (n*(sum(q_saida)) - sum(saida)**2)**(1/2))
