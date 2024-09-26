@@ -6,7 +6,7 @@ def adaline(entradas, saidas):
     b = 0 # bias
     t = 0.001 # tolerância / condição de parada
     num_ciclos = 160
-    erros = []
+    erros = [] # erro quadratico
     for ciclo in range(num_ciclos):
         erroquadratico = 0
         maior_alteracao = 0
@@ -25,7 +25,7 @@ def adaline(entradas, saidas):
         if maior_alteracao < t:
             print(f"encerrado no ciclo: {ciclo}")
             break
-    return w, b
+    return w, b, erros
 
 def neoronio(entrada, pesos, bias):
     y_liq = bias
