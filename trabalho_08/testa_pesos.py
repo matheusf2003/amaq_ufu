@@ -1,5 +1,5 @@
 import numpy as np
-from pesos_salvos import v, bv, w, bw  # Carregar os pesos salvos
+from pesos_salvos200 import v, bv, w, bw  # Carregar os pesos salvos
 from tensorflow.keras.datasets import mnist
 
 # Função de ativação: sigmoid bipolar (mantendo a original)
